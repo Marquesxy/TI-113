@@ -24,7 +24,25 @@ function lerNumeros() {
         } while (numero.trim() === "" || isNaN(numero)) { }
 
     }
+    return lista;
 
 }
-lerNumeros();
 
+function MostrarNumeros(lista) {
+
+    let mensagem = "";
+    for (let i = 0; i < lista.length; i++) {
+
+        let ultimaPosicao = (lista.length - 1); 
+    
+        if(i == ultimaPosicao)
+            mensagem += lista[i] + ".";
+        else
+            mensagem += lista[i] + ", "; 
+
+    }
+    alert (mensagem);
+}
+
+let listaNumeros = lerNumeros();
+MostrarNumeros(listaNumeros);
