@@ -1,27 +1,34 @@
-let letras = [];
-let contador = 0;
-let mensagem = "";
+/*Ex5: Crie um algoritmo usando funções que leia até 50 números inteiros
+e armazene-os numa lista de números, considere as premissas abaixo:
+	• Não pode informar letras, palavras ou vazio. Alerte-o do erro e repita a leitura.
+	• Não pode informar números negativos.
+	• Crie um menu que o usuário escolha cadastrar 5, 15, 25 ou 50.
+	• Ao final do cadastro ele tem um outro menu pra escolher exibir:
+- A lista cadastrada, somente os pares, ou somente os impares?*/
 
-//leitura de uma letra no vetor de letras
-for (let i = 0; i < 10; i++) {
-    let letra = prompt("Informe uma Letra: ");
-    letras.push(letra);
-}
+function LeituraInteiro () {
+    let LerNum = []
+    let cinco = [5]
+    let quinze = [15]
+    let vinte5 = [25]
+    let cinquenta = [50]
+    let m 
 
-for (let j = 0; j < letras.length; j++) {
-    //converto o texto pra maiúsculo
-    let letra = letras[j].toUpperCase();
-    //Verifico se tem alguma vogal
-    let temA = (letra == "A"); // true ou false
-    let temE = (letra == "E"); // true ou false
-    let temI = (letra == "I"); // true ou false
-    let temO = (letra == "O"); // true ou false
-    let temU = (letra == "U"); // true ou false
-    
-    //se tiver alguma vogal ele não entra no if
-    if ((temA || temE || temI || temO || temU) == false) {
-        contador += 1;
-        mensagem += letra + "\n";
-    }
+    m = parseInt(prompt("Informe o numero de cadastro que deseja fazer (5, 15, 25 ou 50)"));
+    if (m === 5)
+
+    /*for (let i = 0; i < 50; i++) {
+        let num = prompt(`Informe numero ${i + 1}`);
+        
+        if (num.trim() === "")
+            alert("A caixa de entra esta vazia");
+        else if (isNaN(num))
+            alert ("O valor digitado não é um numero")
+
+        else if (num)
+            alert ("Não aceitamos numeros negativos ")
+        }
+
+    LerNum.push(num)
 }
-alert(mensagem + "\n" + "Teve " + contador + " Consoantes!");
+return LerNum
