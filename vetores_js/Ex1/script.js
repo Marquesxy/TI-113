@@ -6,29 +6,64 @@ funções onde devem ser lidos os nomes, idades e salários de até
 • Idades válidas e maiores de 14 anos e menores de 120 anos.
 • Os salários informados devem ser válidos e não podem ser inferiores a R$ 2000,00 e acima de 20000,00.
 • Deve-se cadastrar no mínimo 5 pessoas.*/
-function SistemaCad() {
+/*function SistemaCad() {
     let nomes = []
     let idade = []
-    let salario = []
+    let salarios = []
 
     for (let i = 0; i < 5; i++) {
-        let leitura = prompt(`Informe o nome e sobrenome da pessoa ${i + 1}`);
-        
-        leitura = leitura.trim()
-        while (isNaN(leitura) === false || leitura.indexOf(" ") === -1) {
-            alert("Nome invalido. Tente novamente");
-            leitura = prompt(`Informe o ${i + 1}º  nome novamente:`);
-            nomes.push(leitura)
-        }
+        let nome = prompt(`Digite o nome e o sobrenome da pessoa ${i + 1}`);
+        nome = nome.trim();
 
-        idade = prompt(`Informe a idade da pessoa ${t + 1}`);
-        while (isNaN(idade) || idade < 14 || idade > 120) {
-            alert("Idade invalida. Tente novamente");
-            idade = prompt(`Informe a ${i + 1}º  idade novamente:`);
-
+        while (nome === " " || nome.indexOf(" ") === -1) {
+            alert("Nome incorreto")
+            nome = prompt(`Informe o ${i + 1}º  nome novamente:`);
         }
+        nomes.push(nome)
     }
+    let salario = prompt("Informe um Salário:");
+    while (isNaN(salario) || salario < 2000 || salario > 20000) {
+        alert("Salário Inválido");
+        salario = prompt(`Informe o sálario de ${nome} novamente:`);
+    }
+    salarios.push(parseInt(salario));
+}
+SistemaCad(); 
+*/
+function SistemaCad (nomes = [], salarios = []) {
+
+    let continuar = false;
+    let contador = 0;
+    do {
+        contador++;
+        let nome = prompt("Informe um Nome:");
+        nome = nome.trim()
+        while (nome === " " || nome.indexOf() ===-1) {
+            alert("Nome Inválido");
+            nome = prompt("Informe um Nome novamente:");
+        }
+        nomes.push(nome);
+
+        let salario = prompt(`Informe o Salário do funcionario ${nome}`);
+        while (isNaN(salario)) {
+            alert("Salário Inválido");
+            salario = prompt(`Informe o sálario de ${nome} novamente:`);
+        }
+        salarios.push(parseFloat(salario));
+
+        let idade = prompt(`Informe o Salário do funcionario ${nome}`);
+        while (isNaN(idade)) {
+            alert("Salário Inválido");
+            idade = prompt(`Informe o sálario de ${nome} novamente:`);
+        }
+        salarios.push(parseFloat(salario));
+
+        if (contador < 50) {
+            continuar = confirm("Deseja continuar o cadastro?");
+        } else {
+            continuar = false;
+        }
+
+    } while (continuar == true);
 
 }
-
-SistemaCad();
