@@ -46,7 +46,7 @@ function Teste(dados) {
 
     document.write("</table>");
 }
-
+document.wri
 // Executa as funções
 const dados = SalarioPessoas();
 Teste(dados);
